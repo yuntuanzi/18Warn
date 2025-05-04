@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年龄验证</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5649c0;
+            --danger: #ff4757;
+            --danger-dark: #e84118;
+            --text: #f1f2f6;
+            --text-light: #dfe6e9;
+            --bg: #1e272e;
+            --card-bg: #2f3640;
+            --border: #353b48;
+            --accent: #00cec9;
+            --enter-blue: #3498db;
+            --enter-blue-dark: #2980b9;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text);
+            overflow: hidden;
+            line-height: 1.6;
+        }
+        
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(108, 92, 231, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .age-verification {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            z-index: 1;
+            border: 1px solid var(--border);
+            transform: scale(0.95);
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(108, 92, 231, 0.3);
+        }
+        
+        .warning-icon {
+            font-size: 3.5rem;
+            color: var(--danger);
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .content-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .content-box h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        
+        .content-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        .legal-text {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            opacity: 0.8;
+            margin: 25px 0;
+            text-align: left;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        #confirm {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        #confirm:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(108, 92, 231, 0.3);
+        }
+        
+        #deny {
+            background-color: var(--danger);
+            color: white;
+        }
+        
+        #deny:hover {
+            background-color: var(--danger-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(255, 71, 87, 0.3);
+        }
+        
+        #confirm.enter-mode {
+            background-color: var(--enter-blue);
+        }
+        
+        #confirm.enter-mode:hover {
+            background-color: var(--enter-blue-dark);
+            box-shadow: 0 7px 14px rgba(52, 152, 219, 0.3);
+        }
+        
+        .glow {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.4), transparent 70%);
+            filter: blur(15px);
+            z-index: -1;
+            animation: move 15s infinite alternate;
+        }
+        
+        .glow:nth-child(2) {
+            background: radial-gradient(circle, rgba(255, 71, 87, 0.4), transparent 70%);
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+        
+        .glow:nth-child(3) {
+            background: radial-gradient(circle, rgba(0, 168, 255, 0.4), transparent 70%);
+            animation-delay: -10s;
+            animation-duration: 25s;
+        }
+        
+        @keyframes move {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100px, 100px); }
+            50% { transform: translate(-100px, 150px); }
+            75% { transform: translate(50px, -100px); }
+            100% { transform: translate(-150px, -50px); }
+        }
+        
+        .loader {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .terms-toggle {
+            color: var(--accent);
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin: 15px 0;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .terms-toggle:hover {
+            text-decoration: underline;
+        }
+        
+        .terms-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        
+        .terms-content.active {
+            max-height: 500px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        
+        .verification-success {
+            color: #2ecc71;
+            font-weight: bold;
+            margin: 15px 0;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    <div class="glow"></div>
+    <div class="glow"></div>
+    
+    <div class="particles" id="particles"></div>
+    
+    <div class="age-verification">
+        <div class="warning-icon">⚠️</div>
+        <h1>年龄验证</h1>
+        
+        <p>根据相关法律法规和平台政策，您需要验证您的年龄才能继续访问。</p>
+        
+        <div class="content-box">
+            <h3>重要提示</h3>
+            <p>本网站包含可能不适合未成年人观看的内容，包括但不限于：成人主题、暴力场景、强烈语言等。根据您所在地区的法律，您必须年满18周岁或达到法定成人年龄才能访问。</p>
+        </div>
+        
+        <div class="content-box">
+            <h3>隐私声明</h3>
+            <p>您的年龄验证信息仅用于确认访问权限，不会被存储或用于其他目的。我们重视您的隐私，所有数据处理均符合相关隐私保护法规。</p>
+        </div>
+        
+        <div class="terms-toggle" id="termsToggle">▼ 查看完整条款和条件</div>
+        <div class="terms-content" id="termsContent">
+            <p>1. 访问本网站即表示您声明并保证您已达到您所在司法管辖区的法定成人年龄。</p>
+            <p>2. 您同意不会将本网站内容展示或分享给未成年人。</p>
+            <p>3. 本网站内容仅作为成人娱乐用途，您需自行承担访问责任。</p>
+            <p>4. 任何违反年龄限制的访问行为都将被视为违反本协议条款。</p>
+            <p>5. 我们保留拒绝服务、终止访问或删除内容的权利，恕不另行通知。</p>
+            <p>6. 本网站内容受版权保护，未经授权不得复制、分发或修改。</p>
+        </div>
+        
+        <div class="legal-text">
+            <p>根据《中华人民共和国未成年人保护法》及相关法规，禁止向未成年人传播不适宜内容。故意规避年龄验证系统可能构成违法行为。</p>
+        </div>
+        
+        <div class="verification-success" id="successMessage"></div>
+        
+        <div class="buttons">
+            <button id="confirm">
+                <span>我已满18周岁</span>
+            </button>
+            <button id="deny">
+                <span>我尚未满18周岁</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 创建粒子背景
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite alternate`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // 清除验证记录
+        function clearVerification() {
+            document.cookie = "age_verified=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            localStorage.removeItem('age_verified');
+        }
+        
+        // 条款切换
+        document.getElementById('termsToggle').addEventListener('click', function() {
+            const content = document.getElementById('termsContent');
+            content.classList.toggle('active');
+            this.textContent = content.classList.contains('active') ? '▲ 隐藏条款和条件' : '▼ 查看完整条款和条件';
+        });
+        
+        // 按钮功能
+        document.getElementById('confirm').addEventListener('click', function() {
+            const btn = this;
+            const btnText = btn.querySelector('span');
+            
+            // 如果是进入网站模式
+            if(btn.classList.contains('enter-mode')) {
+                btnText.innerHTML = '<span class="loader"></span> 正在进入...';
+                btn.style.pointerEvents = 'none';
+                
+                // 跳转到nb.php
+                setTimeout(() => {
+                    window.location.href = "nb.php";
+                }, 500);
+                return;
+            }
+            
+            // 显示加载状态
+            btnText.innerHTML = '<span class="loader"></span> 验证中...';
+            btn.style.pointerEvents = 'none';
+            
+            // 模拟验证过程
+            setTimeout(() => {
+                // 设置验证状态
+                document.cookie = "age_verified=true; path=/; max-age=" + (60 * 60 * 24 * 30); // 30天有效期
+                localStorage.setItem('age_verified', 'true');
+                
+                // 显示验证成功
+                document.getElementById('successMessage').textContent = '✓ 您已经验证通过，获得访问权限';
+                
+                // 0.6秒后改变按钮样式
+                setTimeout(() => {
+                    btn.classList.add('enter-mode');
+                    btnText.textContent = '进入网站';
+                    btn.style.pointerEvents = 'auto';
+                }, 600);
+                
+            }, 1000);
+        });
+
+        document.getElementById('deny').addEventListener('click', function() {
+            const btnText = this.querySelector('span');
+            
+            // 清除验证记录
+            clearVerification();
+            
+            // 显示跳转状态
+            btnText.textContent = '正在跳转...';
+            this.style.pointerEvents = 'none';
+            
+            // 跳转到教育网站
+            setTimeout(() => {
+                window.location.href = "https://basic.smartedu.cn/";
+            }, 500);
+        });
+
+        // 检查是否已经验证过
+        window.onload = function() {
+            createParticles();
+            
+            if(document.cookie.includes('age_verified=true') || localStorage.getItem('age_verified') === 'true') {
+                const btn = document.getElementById('confirm');
+                const btnText = btn.querySelector('span');
+                
+                // 显示已验证状态
+                document.getElementById('successMessage').textContent = '✓ 您已经验证通过，获得访问权限';
+                btn.classList.add('enter-mode');
+                btnText.textContent = '进入网站';
+            }
+        };
+    </script>
+</body>
+</html>
