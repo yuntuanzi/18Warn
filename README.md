@@ -29,7 +29,13 @@
 ![界面2](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e)
 ![界面3](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d)
 > 暗黑模式在被骗统计页面的右下角
+
 ![image](https://github.com/user-attachments/assets/5618d8e9-554f-4edb-9f95-fd3f502aab61)
+
+> 没有通过年龄验证的话，会提示无权限
+
+![image](https://github.com/user-attachments/assets/a64c7074-906e-46cf-b9b9-21394a2d34ce)
+
 
 
 ## 🛠️ 环境支持
