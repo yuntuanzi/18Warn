@@ -8,10 +8,10 @@
 
 ```diff
 + 💫 炫酷粒子动画背景 - 高级好看
-+ ⚠️ 醒目的警告图标 - 专业感
 + 🔄 流畅的过渡动画 - 点击按钮时的加载动画
 + 🍪 Cookie存储验证状态 - 30天内无需重复验证
 + 📱 响应式设计 - 手机电脑都能完美显示
++ 🌕 暗黑模式 - 炫酷的过渡动画
 ```
 
 ## 🎭 交互结局
@@ -24,10 +24,13 @@
 ## 🖼️ 预览
 > 预览站点：[https://18.星.fun/](https://18.星.fun/)
 > 站长交流群：[967140086](https://qm.qq.com/cgi-bin/qm/qr?k=6ww_haorKSc-F1QWF4JdrErhmFzxeNbo&jump_from=webapi&authKey=7py1srP3pqE94lCPjoh02aQhVPjZuTlYhm+q+yZ4NpTP0WEd46kTWKRau+P5r9ey)
-
+> 
 ![界面1](https://github.com/user-attachments/assets/e2498acd-0b67-43c0-9713-0b678b655336)
 ![界面2](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e)
 ![界面3](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d)
+> 暗黑模式在被骗统计页面的右下角
+![image](https://github.com/user-attachments/assets/5618d8e9-554f-4edb-9f95-fd3f502aab61)
+
 
 ## 🛠️ 环境支持
 
