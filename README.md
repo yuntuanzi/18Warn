@@ -13,7 +13,7 @@
 + 🌕 暗黑/明亮模式切换 - 酷炫体验
 + 📊 被骗排行榜 - 按城市统计访问次数
 + 💬 留言板 - 留下你的“被骗感言”
-+ 📸 QR码分享 - 快速分享给好友
++ 📸 切换不同国家语言
 ```
 
 ## 🎭 交互结局
@@ -77,7 +77,7 @@ window.location.href = "https://basic.smartedu.cn/"  // 未成年跳转链接
 基于原仓库 [yuntuanzi/18Warn](https://github.com/yuntuanzi/18Warn)，本复刻版本新增了以下功能：
 - **被骗排行榜**：根据IP定位城市，统计访问次数，展示前三名城市。
 - **留言板**：用户可提交最多200字的“被骗感言”，支持频率限制（每IP每分钟1次）。
-- **QR码分享**：生成固定URL的二维码，便于快速分享。
+- **多语言支持**：一键切换不同语言（欢迎贡献"nb.php"的其他语言翻译）
 - **性能优化**：使用`DocumentFragment`优化粒子动画，减少DOM操作。
 - **SEO优化**：添加元数据，提升搜索引擎友好性。
 - **无缓存策略**：通过HTTP头确保页面实时更新。
@@ -96,4 +96,3 @@ window.location.href = "https://basic.smartedu.cn/"  // 未成年跳转链接
 欢迎提交Pull Request改进项目！  
 特别鸣谢：
 - 原作者：[yuntuanzi](https://github.com/yuntuanzi)
-- 技术支持：DeepSeek、腾讯元宝
