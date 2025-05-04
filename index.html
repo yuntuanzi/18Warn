@@ -269,91 +269,7 @@
             margin: 15px 0;
             height: 20px;
         }
-        
-        /* 语言选择器样式 */
-        .language-selector {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 10;
-        }
-        
-        .language-btn {
-            background: rgba(47, 54, 64, 0.8);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s;
-            font-size: 14px;
-        }
-        
-        .language-btn:hover {
-            background: rgba(108, 92, 231, 0.2);
-            border-color: var(--primary);
-        }
-        
-        .language-btn i {
-            font-size: 16px;
-            transition: transform 0.3s;
-        }
-        
-        .language-btn.active i {
-            transform: rotate(180deg);
-        }
-        
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            width: 160px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            max-height: 0;
-            transition: max-height 0.3s ease, opacity 0.2s ease;
-            opacity: 0;
-        }
-        
-        .language-dropdown.active {
-            max-height: 300px;
-            opacity: 1;
-            margin-top: 5px;
-        }
-        
-        .language-option {
-            padding: 10px 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .language-option:hover {
-            background: rgba(108, 92, 231, 0.2);
-        }
-        
-        .language-flag {
-            width: 20px;
-            height: 15px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-        
-        .selected-language {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="glow"></div>
@@ -362,53 +278,20 @@
     
     <div class="particles" id="particles"></div>
     
-
-    
     <div class="age-verification">
         <div class="warning-icon">⚠️</div>
-        <h1 id="title">年龄验证</h1>
+        <h1>年龄验证</h1>
         
-        <p id="description">根据相关法律法规和平台政策，您需要验证您的年龄才能继续访问。</p>
-            <!-- 语言选择器 -->
-    <div class="language-selector">
-        <div class="language-btn" id="languageBtn">
-            <div class="selected-language">
-                <img src="https://flagcdn.com/w20/cn.png" class="language-flag" alt="中文">
-                <span>中文</span>
-            </div>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="language-dropdown" id="languageDropdown">
-            <div class="language-option" data-lang="zh" data-flag="cn">
-                <img src="https://flagcdn.com/w20/cn.png" class="language-flag" alt="中文">
-                <span>中文</span>
-            </div>
-            <div class="language-option" data-lang="en" data-flag="us">
-                <img src="https://flagcdn.com/w20/us.png" class="language-flag" alt="English">
-                <span>English</span>
-            </div>
-            <div class="language-option" data-lang="ja" data-flag="jp">
-                <img src="https://flagcdn.com/w20/jp.png" class="language-flag" alt="日本語">
-                <span>日本語</span>
-            </div>
-            <div class="language-option" data-lang="ko" data-flag="kr">
-                <img src="https://flagcdn.com/w20/kr.png" class="language-flag" alt="한국어">
-                <span>한국어</span>
-            </div>
-            <div class="language-option" data-lang="fr" data-flag="fr">
-                <img src="https://flagcdn.com/w20/fr.png" class="language-flag" alt="Français">
-                <span>Français</span>
-            </div>
-        </div>
-    </div>
+        <p>根据相关法律法规和平台政策，您需要验证您的年龄才能继续访问。</p>
+        
         <div class="content-box">
-            <h3 id="warning-title">重要提示</h3>
-            <p id="warning-text">本网站包含可能不适合未成年人观看的内容，包括但不限于：成人主题、暴力场景、强烈语言等。根据您所在地区的法律，您必须年满18周岁或达到法定成人年龄才能访问。</p>
+            <h3>重要提示</h3>
+            <p>本网站包含可能不适合未成年人观看的内容，包括但不限于：成人主题、暴力场景、强烈语言等。根据您所在地区的法律，您必须年满18周岁或达到法定成人年龄才能访问。</p>
         </div>
         
         <div class="content-box">
-            <h3 id="privacy-title">隐私声明</h3>
-            <p id="privacy-text">您的年龄验证信息仅用于确认访问权限，不会被存储或用于其他目的。我们重视您的隐私，所有数据处理均符合相关隐私保护法规。</p>
+            <h3>隐私声明</h3>
+            <p>您的年龄验证信息仅用于确认访问权限，不会被存储或用于其他目的。我们重视您的隐私，所有数据处理均符合相关隐私保护法规。</p>
         </div>
         
         <div class="terms-toggle" id="termsToggle">▼ 查看完整条款和条件</div>
@@ -422,106 +305,22 @@
         </div>
         
         <div class="legal-text">
-            <p id="legal-text">根据《中华人民共和国未成年人保护法》及相关法规，禁止向未成年人传播不适宜内容。故意规避年龄验证系统可能构成违法行为。</p>
+            <p>根据《中华人民共和国未成年人保护法》及相关法规，禁止向未成年人传播不适宜内容。故意规避年龄验证系统可能构成违法行为。</p>
         </div>
         
         <div class="verification-success" id="successMessage"></div>
         
         <div class="buttons">
             <button id="confirm">
-                <span id="confirm-text">我已满18周岁</span>
+                <span>我已满18周岁</span>
             </button>
             <button id="deny">
-                <span id="deny-text">我尚未满18周岁</span>
+                <span>我尚未满18周岁</span>
             </button>
         </div>
     </div>
 
     <script>
-        // 多语言内容
-        const translations = {
-            zh: {
-                title: "年龄验证",
-                description: "根据相关法律法规和平台政策，您需要验证您的年龄才能继续访问。",
-                "warning-title": "重要提示",
-                "warning-text": "本网站包含可能不适合未成年人观看的内容，包括但不限于：成人主题、暴力场景、强烈语言等。根据您所在地区的法律，您必须年满18周岁或达到法定成人年龄才能访问。",
-                "privacy-title": "隐私声明",
-                "privacy-text": "您的年龄验证信息仅用于确认访问权限，不会被存储或用于其他目的。我们重视您的隐私，所有数据处理均符合相关隐私保护法规。",
-                "terms-toggle": "▼ 查看完整条款和条件",
-                "legal-text": "根据《中华人民共和国未成年人保护法》及相关法规，禁止向未成年人传播不适宜内容。故意规避年龄验证系统可能构成违法行为。",
-                "confirm-text": "我已满18周岁",
-                "deny-text": "我尚未满18周岁",
-                "success-message": "✓ 您已经验证通过，获得访问权限",
-                "enter-text": "进入网站",
-                "verifying-text": "验证中...",
-                "redirecting-text": "正在跳转..."
-            },
-            en: {
-                title: "Age Verification",
-                description: "According to relevant laws and platform policies, you need to verify your age to continue.",
-                "warning-title": "Important Notice",
-                "warning-text": "This website contains content that may not be suitable for minors, including but not limited to: adult themes, violent scenes, strong language, etc. According to the laws of your region, you must be at least 18 years old or of legal adult age to access.",
-                "privacy-title": "Privacy Statement",
-                "privacy-text": "Your age verification information is only used to confirm access rights and will not be stored or used for other purposes. We value your privacy and all data processing complies with relevant privacy protection regulations.",
-                "terms-toggle": "▼ View Full Terms and Conditions",
-                "legal-text": "According to the laws of your country/region, it is prohibited to disseminate inappropriate content to minors. Deliberately bypassing the age verification system may constitute a violation of the law.",
-                "confirm-text": "I am 18 or older",
-                "deny-text": "I am under 18",
-                "success-message": "✓ You have been verified and granted access",
-                "enter-text": "Enter Website",
-                "verifying-text": "Verifying...",
-                "redirecting-text": "Redirecting..."
-            },
-            ja: {
-                title: "年齢確認",
-                description: "関連法令およびプラットフォームポリシーに基づき、年齢確認が必要です。",
-                "warning-title": "重要なお知らせ",
-                "warning-text": "このウェブサイトには、成人向けのテーマ、暴力シーン、強い言葉遣いなど、未成年者には適さない可能性のあるコンテンツが含まれています。お住まいの地域の法律に従い、18歳以上または法定成人年齢に達している必要があります。",
-                "privacy-title": "プライバシーに関する声明",
-                "privacy-text": "年齢確認情報はアクセス権の確認のみに使用され、保存されたり他の目的に使用されたりすることはありません。私たちはあなたのプライバシーを尊重し、すべてのデータ処理は関連するプライバシー保護規制に準拠しています。",
-                "terms-toggle": "▼ 利用規約を表示",
-                "legal-text": "お住まいの国/地域の法律に基づき、未成年者に不適切なコンテンツを配布することは禁止されています。年齢確認システムを故意に回避することは法律違反となる可能性があります。",
-                "confirm-text": "18歳以上です",
-                "deny-text": "18歳未満です",
-                "success-message": "✓ 認証が完了し、アクセスが許可されました",
-                "enter-text": "ウェブサイトに入る",
-                "verifying-text": "確認中...",
-                "redirecting-text": "リダイレクト中..."
-            },
-            ko: {
-                title: "연령 확인",
-                description: "관련 법률 및 플랫폼 정책에 따라 연령 확인이 필요합니다.",
-                "warning-title": "중요한 안내",
-                "warning-text": "이 웹사이트에는 성인 주제, 폭력 장면, 강한 언어 등 미성년자에게 적합하지 않을 수 있는 콘텐츠가 포함되어 있습니다. 귀하의 지역 법률에 따라 18세 이상 또는 법적 성인 연령에 도달해야 합니다.",
-                "privacy-title": "개인정보 보호 정책",
-                "privacy-text": "귀하의 연령 확인 정보는 접근 권한 확인을 위해서만 사용되며 저장되거나 다른 목적으로 사용되지 않습니다. 우리는 귀하의 개인정보를 소중히 여기며 모든 데이터 처리는 관련 개인정보 보호 규정을 준수합니다.",
-                "terms-toggle": "▼ 전체 약관 보기",
-                "legal-text": "귀하의 국가/지역의 법률에 따라 미성년자에게 부적절한 콘텐츠를 전파하는 것은 금지되어 있습니다. 연령 확인 시스템을 고의로 우회하는 것은 법 위반이 될 수 있습니다.",
-                "confirm-text": "18세 이상입니다",
-                "deny-text": "18세 미만입니다",
-                "success-message": "✓ 확인이 완료되어 접근이 허용되었습니다",
-                "enter-text": "웹사이트 입장",
-                "verifying-text": "확인 중...",
-                "redirecting-text": "리디렉션 중..."
-            },
-            fr: {
-                title: "Vérification d'âge",
-                description: "Conformément aux lois et politiques de la plateforme, vous devez vérifier votre âge pour continuer.",
-                "warning-title": "Avis important",
-                "warning-text": "Ce site web contient du contenu qui peut ne pas convenir aux mineurs, y compris, mais sans s'y limiter : thèmes pour adultes, scènes de violence, langage fort, etc. Selon les lois de votre région, vous devez avoir au moins 18 ans ou être majeur pour accéder.",
-                "privacy-title": "Déclaration de confidentialité",
-                "privacy-text": "Vos informations de vérification d'âge ne sont utilisées que pour confirmer les droits d'accès et ne seront pas stockées ou utilisées à d'autres fins. Nous respectons votre vie privée et tous les traitements de données sont conformes aux réglementations de protection de la vie privée.",
-                "terms-toggle": "▼ Voir les conditions générales complètes",
-                "legal-text": "Conformément aux lois de votre pays/région, il est interdit de diffuser du contenu inapproprié aux mineurs. Contourner délibérément le système de vérification d'âge peut constituer une infraction.",
-                "confirm-text": "J'ai 18 ans ou plus",
-                "deny-text": "J'ai moins de 18 ans",
-                "success-message": "✓ Vous avez été vérifié et avez obtenu l'accès",
-                "enter-text": "Entrer sur le site",
-                "verifying-text": "Vérification en cours...",
-                "redirecting-text": "Redirection en cours..."
-            }
-        };
-
         // 创建粒子背景
         function createParticles() {
             const container = document.getElementById('particles');
@@ -558,97 +357,16 @@
         document.getElementById('termsToggle').addEventListener('click', function() {
             const content = document.getElementById('termsContent');
             content.classList.toggle('active');
-            const currentLang = document.querySelector('.language-btn').getAttribute('data-lang') || 'zh';
-            const toggleText = translations[currentLang]['terms-toggle'];
-            this.textContent = content.classList.contains('active') ? 
-                toggleText.replace('▼', '▲').replace('View', 'Hide').replace('表示', '非表示').replace('보기', '숨기').replace('Voir', 'Masquer') : 
-                toggleText;
+            this.textContent = content.classList.contains('active') ? '▲ 隐藏条款和条件' : '▼ 查看完整条款和条件';
         });
-        
-        // 语言切换功能
-        const languageBtn = document.getElementById('languageBtn');
-        const languageDropdown = document.getElementById('languageDropdown');
-        
-        languageBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            languageDropdown.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-        
-        document.addEventListener('click', function() {
-            languageDropdown.classList.remove('active');
-            languageBtn.classList.remove('active');
-        });
-        
-        document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', function() {
-                const lang = this.getAttribute('data-lang');
-                const flag = this.getAttribute('data-flag');
-                
-                // 更新按钮显示
-                const selectedLang = document.querySelector('.selected-language');
-                selectedLang.innerHTML = `
-                    <img src="https://flagcdn.com/w20/${flag}.png" class="language-flag" alt="${lang}">
-                    <span>${this.querySelector('span').textContent}</span>
-                `;
-                
-                languageBtn.setAttribute('data-lang', lang);
-                
-                // 更新页面内容
-                updateLanguage(lang);
-                
-                // 关闭下拉菜单
-                languageDropdown.classList.remove('active');
-                languageBtn.classList.remove('active');
-                
-                // 存储语言偏好
-                localStorage.setItem('preferred_language', lang);
-            });
-        });
-        
-        // 更新页面语言
-        function updateLanguage(lang) {
-            const translation = translations[lang] || translations['zh'];
-            
-            document.getElementById('title').textContent = translation['title'];
-            document.getElementById('description').textContent = translation['description'];
-            document.getElementById('warning-title').textContent = translation['warning-title'];
-            document.getElementById('warning-text').textContent = translation['warning-text'];
-            document.getElementById('privacy-title').textContent = translation['privacy-title'];
-            document.getElementById('privacy-text').textContent = translation['privacy-text'];
-            document.getElementById('legal-text').textContent = translation['legal-text'];
-            document.getElementById('confirm-text').textContent = translation['confirm-text'];
-            document.getElementById('deny-text').textContent = translation['deny-text'];
-            
-            // 更新条款切换按钮文本
-            const termsToggle = document.getElementById('termsToggle');
-            const termsContent = document.getElementById('termsContent');
-            termsToggle.textContent = termsContent.classList.contains('active') ? 
-                translation['terms-toggle'].replace('▼', '▲').replace('View', 'Hide').replace('表示', '非表示').replace('보기', '숨기').replace('Voir', 'Masquer') : 
-                translation['terms-toggle'];
-            
-            // 更新已验证状态文本
-            const successMessage = document.getElementById('successMessage');
-            if(successMessage.textContent.includes('✓')) {
-                successMessage.textContent = translation['success-message'];
-            }
-            
-            // 更新进入网站按钮文本
-            const confirmBtn = document.getElementById('confirm');
-            if(confirmBtn.classList.contains('enter-mode')) {
-                confirmBtn.querySelector('span').textContent = translation['enter-text'];
-            }
-        }
         
         document.getElementById('confirm').addEventListener('click', function() {
             const btn = this;
             const btnText = btn.querySelector('span');
-            const currentLang = document.querySelector('.language-btn').getAttribute('data-lang') || 'zh';
-            const translation = translations[currentLang];
             
             // 如果是进入网站模式
             if(btn.classList.contains('enter-mode')) {
-                btnText.innerHTML = `<span class="loader"></span> ${translation['enter-text']}`;
+                btnText.innerHTML = '<span class="loader"></span> 正在进入...';
                 btn.style.pointerEvents = 'none';
                 
                 // 跳转到nb.php
@@ -659,7 +377,7 @@
             }
             
             // 显示加载状态
-            btnText.innerHTML = `<span class="loader"></span> ${translation['verifying-text']}`;
+            btnText.innerHTML = '<span class="loader"></span> 验证中...';
             btn.style.pointerEvents = 'none';
             
             // 模拟验证过程
@@ -669,12 +387,12 @@
                 localStorage.setItem('age_verified', 'true');
                 
                 // 显示验证成功
-                document.getElementById('successMessage').textContent = translation['success-message'];
+                document.getElementById('successMessage').textContent = '✓ 您已经验证通过，获得访问权限';
                 
                 // 0.6秒后改变按钮样式
                 setTimeout(() => {
                     btn.classList.add('enter-mode');
-                    btnText.textContent = translation['enter-text'];
+                    btnText.textContent = '进入网站';
                     btn.style.pointerEvents = 'auto';
                 }, 600);
                 
@@ -683,14 +401,12 @@
 
         document.getElementById('deny').addEventListener('click', function() {
             const btnText = this.querySelector('span');
-            const currentLang = document.querySelector('.language-btn').getAttribute('data-lang') || 'zh';
-            const translation = translations[currentLang];
             
             // 清除验证记录
             clearVerification();
             
             // 显示跳转状态
-            btnText.textContent = translation['redirecting-text'];
+            btnText.textContent = '正在跳转...';
             this.style.pointerEvents = 'none';
             
             // 跳转到教育网站
@@ -703,30 +419,14 @@
         window.onload = function() {
             createParticles();
             
-            // 设置默认语言
-            const preferredLang = localStorage.getItem('preferred_language') || 'zh';
-            const defaultOption = document.querySelector(`.language-option[data-lang="${preferredLang}"]`);
-            if(defaultOption) {
-                const flag = defaultOption.getAttribute('data-flag');
-                const text = defaultOption.querySelector('span').textContent;
-                document.querySelector('.selected-language').innerHTML = `
-                    <img src="https://flagcdn.com/w20/${flag}.png" class="language-flag" alt="${preferredLang}">
-                    <span>${text}</span>
-                `;
-                languageBtn.setAttribute('data-lang', preferredLang);
-                updateLanguage(preferredLang);
-            }
-            
             if(document.cookie.includes('age_verified=true') || localStorage.getItem('age_verified') === 'true') {
                 const btn = document.getElementById('confirm');
                 const btnText = btn.querySelector('span');
-                const currentLang = document.querySelector('.language-btn').getAttribute('data-lang') || 'zh';
-                const translation = translations[currentLang];
                 
                 // 显示已验证状态
-                document.getElementById('successMessage').textContent = translation['success-message'];
+                document.getElementById('successMessage').textContent = '✓ 您已经验证通过，获得访问权限';
                 btn.classList.add('enter-mode');
-                btnText.textContent = translation['enter-text'];
+                btnText.textContent = '进入网站';
             }
         };
     </script>
