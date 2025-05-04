@@ -70,5 +70,5 @@ window.location.href = "https://basic.smartedu.cn/"  // 教育平台链接
 
 ```diff
 - 欢迎提交Pull Request来改进项目
-- 特别鸣谢：暂无
+- 特别鸣谢：DeepSeek 腾讯元宝
 ```
