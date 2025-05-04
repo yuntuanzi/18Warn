@@ -6,11 +6,10 @@
 ## 🖼️ 预览
 > 预览站点：[https://18.星.fun/](https://18.星.fun/)
 > 站长交流群：[967140086](https://qm.qq.com/cgi-bin/qm/qr?k=6ww_haorKSc-F1QWF4JdrErhmFzxeNbo&jump_from=webapi&authKey=7py1srP3pqE94lCPjoh02aQhVPjZuTlYhm+q+yZ4NpTP0WEd46kTWKRau+P5r9ey)
-| 预览截图 |
-|---------|
-| ![界面1](https://github.com/user-attachments/assets/e2498acd-0b67-43c0-9713-0b678b655336) |
-| ![界面3](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e) |
-| ![界面4](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d) |
+
+![界面1](https://github.com/user-attachments/assets/e2498acd-0b67-43c0-9713-0b678b655336)
+![界面2](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e)
+![界面3](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d)
 
 ## 🎨 核心功能
 
