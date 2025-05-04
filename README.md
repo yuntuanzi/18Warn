@@ -4,13 +4,13 @@
 > 当点击"我已满18周岁"时，会跳转到被骗统计页面😈
 
 ## 🖼️ 预览
-
-| 预览截图 | 在线体验 |
-|---------|----------|
-| ![界面1](https://github.com/user-attachments/assets/e2498acd-0b67-43c0-9713-0b678b655336) | [点击访问](https://18.星.fun/) |
-| ![界面2](https://github.com/user-attachments/assets/b3fe73e0-77a8-4df8-bfe3-e3b9aa86eb81) | |
-| ![界面3](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e) | |
-| ![界面4](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d) | |
+> 预览站点：[https://18.星.fun/](https://18.星.fun/)
+> 站长交流群：[967140086](https://qm.qq.com/cgi-bin/qm/qr?k=6ww_haorKSc-F1QWF4JdrErhmFzxeNbo&jump_from=webapi&authKey=7py1srP3pqE94lCPjoh02aQhVPjZuTlYhm+q+yZ4NpTP0WEd46kTWKRau+P5r9ey)
+| 预览截图 |
+|---------|
+| ![界面1](https://github.com/user-attachments/assets/e2498acd-0b67-43c0-9713-0b678b655336) |
+| ![界面3](https://github.com/user-attachments/assets/0f365d50-dfcb-4e5a-be4c-d8e1a6c6066e) |
+| ![界面4](https://github.com/user-attachments/assets/82437273-a963-4b8a-9fab-32fa5c86f32d) |
 
 ## 🎨 核心功能
 
@@ -21,12 +21,13 @@
 + 🍪 Cookie存储验证状态 - 30天内无需重复验证
 + 📱 响应式设计 - 手机电脑都能完美显示
 ```
+#### 好用的话，别忘了点个Star收藏下！！
 
 ## 🎭 交互结局
 
 | 操作 | 结果 |
 |------|------|
-| ✅ 点击"我已满18周岁" | 显示验证成功并跳转指定页面 |
+| ✅ 点击"我已满18周岁" | 显示验证成功并跳转到被骗统计页面 |
 | ❌ 点击"我尚未满18周岁" | 跳转到[国家中小学智慧教育平台](https://basic.smartedu.cn/) |
 
 ## 🛠️ 技术规格
@@ -43,7 +44,7 @@
 window.location.href = "nb.php"  // 成功跳转页面
 window.location.href = "https://basic.smartedu.cn/"  // 教育平台链接
 
-/* CSS变量示例 */
+/* CSS变量 */
 :root {
   --primary-color: #ff4757;
   --secondary-color: #57606f;
@@ -59,5 +60,5 @@ window.location.href = "https://basic.smartedu.cn/"  // 教育平台链接
 
 ```diff
 - 欢迎提交Pull Request来改进项目
-- 特别鸣谢：暂无（虚位以待）
+- 特别鸣谢：暂无
 ```
