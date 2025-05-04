@@ -1,7 +1,97 @@
 <?php
 // 设置PHP版本要求
 if (version_compare(PHP_VERSION, '8.1.0') < 0) {
-    die('PHP 8.1 or higher is required');
+    die('嘿，你需要安装PHP 8.1或者更高的版本来运行');
+}
+
+// 检查访问权限
+if (!isset($_COOKIE['age_verified']) || $_COOKIE['age_verified'] !== 'true') {
+    // 显示无权限页面
+    ?>
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>访问受限</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #1e272e;
+                color: #f1f2f6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                text-align: center;
+                line-height: 1.6;
+            }
+            
+            .access-denied {
+                background-color: #2f3640;
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                max-width: 600px;
+                width: 90%;
+                border: 1px solid #353b48;
+            }
+            
+            h1 {
+                color: #ff4757;
+                margin-bottom: 20px;
+            }
+            
+            .progress-container {
+                width: 100%;
+                height: 10px;
+                background: #353b48;
+                border-radius: 5px;
+                margin: 30px 0;
+                overflow: hidden;
+            }
+            
+            .progress-bar {
+                height: 100%;
+                width: 0;
+                background: linear-gradient(90deg, #ff4757, #e84118);
+                border-radius: 5px;
+                animation: progress 1.5s linear forwards;
+            }
+            
+            @keyframes progress {
+                to {
+                    width: 100%;
+                }
+            }
+            
+            .icon {
+                font-size: 3rem;
+                color: #ff4757;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="access-denied">
+            <div class="icon">⛔</div>
+            <h1>访问受限</h1>
+            <p>您没有访问此页面的权限，正在重定向到年龄验证页面...</p>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+        
+        <script>
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1500);
+        </script>
+    </body>
+    </html>
+    <?php
+    exit;
 }
 
 // 定义计数器文件
